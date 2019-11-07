@@ -8,6 +8,7 @@ USER root
 RUN apt-get update -y&&mkdir -p /usr/share/man/man1&&apt-get clean && apt-get install -y erlang git
 
 WORKDIR /vernemq/vernemq_log_plugin/
+RUN chmod 777 rebar3
 RUN ./rebar3 compile
 WORKDIR /vernemq/
 
